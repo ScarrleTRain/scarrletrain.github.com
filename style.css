@@ -12,6 +12,13 @@ body {
     margin: 50px auto;
     text-align: center;
     padding: 10px;
+    border-radius: 5px;
+}
+
+#theme-toggle {
+    position: fixed;
+    right: 10px;
+    top: 10px;
 }
 
 body.light-theme {
