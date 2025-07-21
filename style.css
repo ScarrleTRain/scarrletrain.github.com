@@ -1,0 +1,14 @@
+body.light-theme {
+    background-color: #fff;
+    color: #000;
+}
+body.dark-theme {
+    background-color: #333;
+    color: #fff;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+}
