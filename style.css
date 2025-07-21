@@ -1,14 +1,37 @@
-body.light-theme {
-    background-color: #fff;
-    color: #000;
-}
-body.dark-theme {
-    background-color: #333;
-    color: #fff;
+/*
+* Hex Codes for Gruvbox theme
+* https://github.com/morhetz/gruvbox?tab=readme-ov-file 
+*/
+
+body {
+    font-family: "Fira Mono", monospace;
 }
 
 .container {
     max-width: 600px;
     margin: 50px auto;
     text-align: center;
+    padding: 10px;
+}
+
+body.light-theme {
+    background-color: #d5c4a1;
+    color: #3c3836;
+}
+
+body.light-theme > .container {
+    background-color: #fbf1c7;
+    border: 2px solid #9d0006;
+    border-left-width: 5px;
+}
+
+body.dark-theme {
+    background-color: #282828;
+    color: #ebdbb2;
+}
+
+body.dark-theme > .container {
+    background-color: #404945;
+    border: 2px solid #458588;
+    border-left-width: 5px;
 }
