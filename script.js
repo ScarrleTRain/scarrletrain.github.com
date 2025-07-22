@@ -15,3 +15,11 @@ themeToggleBtn.addEventListener('click', () => {
     document.body.classList.add(newTheme);
     localStorage.setItem('theme', newTheme);
 });
+
+// Get Ages
+const now = new Date();
+const then = new Date(2009, 0, 5); 
+const millisecondsPerDay = 1000 * 60 * 60 * 24;
+const days = Math.floor((now - then) / millisecondsPerDay);
+
+document.getElementById("age").innerHTML = days;

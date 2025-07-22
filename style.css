@@ -10,9 +10,13 @@ body {
 .container {
     max-width: 600px;
     margin: 50px auto;
-    text-align: center;
+    text-align: left;
     padding: 10px;
     border-radius: 5px;
+}
+
+.container h1 {
+    text-align: center;
 }
 
 #theme-toggle {
@@ -26,7 +30,7 @@ body.light-theme {
     color: #3c3836;
 }
 
-body.light-theme > .container {
+body.light-theme .container {
     background-color: #fbf1c7;
     border: 2px solid #9d0006;
     border-left-width: 5px;
@@ -37,8 +41,24 @@ body.dark-theme {
     color: #ebdbb2;
 }
 
-body.dark-theme > .container {
+body.dark-theme .container {
     background-color: #404945;
     border: 2px solid #458588;
     border-left-width: 5px;
 }
+
+/* body.dark-theme a:link {
+    color: #83a598;
+}
+
+body.dark-theme a:hover {
+    color: #ffffff;
+}
+
+body.dark-theme a:active {
+    color: #fb4934;
+}
+
+body.dark-theme a:visited {
+    color: #d3869b;
+} */
