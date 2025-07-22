@@ -7,11 +7,34 @@ body {
     font-family: "Fira Mono", monospace;
 }
 
+.header {
+    margin: 10px;
+}
+
+.header ul {
+    margin: 0px;
+    padding: 0px;
+    font-size: 0px;
+    list-style-type: none;
+}
+
+.header li {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 20px;
+    text-align: center;
+    border-right: 2px solid;
+}
+
+.header li a {
+    text-decoration: none;
+}
+
 .container {
     max-width: 600px;
     margin: 50px auto;
     text-align: left;
-    padding: 10px;
+    padding: 0px 10px;
     border-radius: 5px;
 }
 
@@ -23,10 +46,24 @@ body {
     position: fixed;
     right: 10px;
     top: 10px;
-}
+} 
 
 body.light-theme {
     background-color: #d5c4a1;
+    color: #3c3836;
+}
+
+body.light-theme .header {
+    background-color: #fbf1c7;
+    border: 2px solid #9d0006;
+    border-left-width: 5px;
+}
+
+body.light-theme .header li {
+    border-right-color: #9d0006;
+}
+
+body.light-theme .header a {
     color: #3c3836;
 }
 
@@ -47,6 +84,21 @@ body.dark-theme .container {
     border-left-width: 5px;
 }
 
+body.dark-theme .header {
+    background-color: #404945;
+    border: 2px solid #458588;
+    border-left-width: 5px;
+}
+
+body.dark-theme .header li {
+    border-right-color: #458588;
+}
+
+body.dark-theme .header a {
+    color: #ebdbb2;
+}
+
+/* TODO fix link colours */
 /* body.dark-theme a:link {
     color: #83a598;
 }
