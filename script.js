@@ -23,3 +23,14 @@ const millisecondsPerDay = 1000 * 60 * 60 * 24;
 const days = Math.floor((now - then) / millisecondsPerDay);
 
 document.getElementById("age").innerHTML = days;
+
+function openMenu() {
+    var x = document.getElementById("header");
+    
+    if (x.classList.contains('responsive')) {
+        x.classList.remove('responsive');
+    }
+    else {
+        x.classList.add('responsive');
+    }
+}
