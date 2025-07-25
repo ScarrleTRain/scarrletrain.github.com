@@ -8,7 +8,10 @@ body {
 }
 
 .header {
-    margin: 10px;
+    margin: 10px auto;
+    overflow: hidden;
+    border-radius: 5px;
+    display: block;
 }
 
 .header ul {
@@ -26,8 +29,40 @@ body {
     border-right: 2px solid;
 }
 
-.header li a {
+.header li a,
+.header .header-icon {
     text-decoration: none;
+}
+
+@media screen and (min-width: 600px) {
+    .header .header-icon {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .header {
+        max-width: fit-content;
+        display: inline-block;
+        vertical-align: top;
+    }
+    
+    .header .header-icon{
+        display: flex;
+        border-right-width: 0px;
+        align-items: center;
+        justify-content: center;
+        aspect-ratio: 1;
+        height: auto;
+    }
+
+    .header .header-icon i {
+        display: block;
+    }
+
+    .header li:not(:first-child) {
+        display: none;
+    }
 }
 
 .container {
@@ -44,6 +79,7 @@ body {
 
 #theme-toggle {
     position: fixed;
+    display: block;
     right: 10px;
     top: 10px;
 } 
