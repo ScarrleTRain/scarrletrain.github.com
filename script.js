@@ -16,14 +16,6 @@ themeToggleBtn.addEventListener('click', () => {
     localStorage.setItem('theme', newTheme);
 });
 
-// Get Ages
-const now = new Date();
-const then = new Date(2009, 0, 5); 
-const millisecondsPerDay = 1000 * 60 * 60 * 24;
-const days = Math.floor((now - then) / millisecondsPerDay);
-
-document.getElementById("age").innerHTML = days;
-
 function openMenu() {
     var x = document.getElementById("header");
     

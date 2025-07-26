@@ -24,14 +24,25 @@
                 <i class="fa fa-bars" id="menu-icon"></i>
             </a></li>
             <li><a href="index.html" class="header-link">Home</a></li>
-            <li class="selected-page"><a href="page1.html" class="header-link">Stuff</a></li>
+            <li class="selected-page"><a href="music.html" class="header-link">Music</a></li>
             <li><a href="page2.html" class="header-link">Other Stuff</a></li>
             <button id="theme-toggle">Theme</button>
         </ul> 
     </nav>
     <div class="container">
-        <h1>stuff</h1>
+        <h1>Music</h1>
+        <h2 id="play-state">Loading...</h2>
+        <div id="widget" class="content">
+            <img id="track-art"/>
+            <div id="track-info">
+                <h3 id="track-name"></h3>
+                <p id="track-artist"></p>
+                <p id="track-album"></p>
+            </div>
+        </div>
+        <!-- Once formatted add attribution -->
     </div>
     <script src="script.js"></script>
+    <script src="lastfm.js"></script>
 </body>
 </html>
