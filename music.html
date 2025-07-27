@@ -30,17 +30,19 @@
         </ul> 
     </nav>
     <div class="container">
-        <h1>Music</h1>
-        <h2 id="play-state">Loading...</h2>
-        <div id="widget" class="content">
-            <img id="track-art"/>
-            <div id="track-info">
-                <h3 id="track-name"></h3>
-                <p id="track-artist"></p>
-                <p id="track-album"></p>
+        <section class="lastfm">
+            <h1>Music</h1>
+            <h2 id="play-state">Loading...</h2>
+            <div id="widget" class="content">
+                <img id="track-art"/>
+                <div id="track-info">
+                    <h3 id="track-name"></h3>
+                    <p id="track-artist"></p>
+                    <p id="track-album"></p>
+                </div>
             </div>
-        </div>
-        <!-- Once formatted add attribution -->
+            <p>latest played song on last.fm | powered by @biancarosa/lastfm-last-played</p>
+        </section>
     </div>
     <script src="script.js"></script>
     <script src="lastfm.js"></script>
