@@ -1,0 +1,211 @@
+/*
+* Hex Codes for Gruvbox theme
+* https://github.com/morhetz/gruvbox?tab=readme-ov-file 
+*/
+
+body {
+    font-family: "Fira Mono", monospace;
+}
+
+.header {
+    margin: 10px auto;
+    overflow: hidden;
+    border-radius: 5px;
+    display: block;
+
+    ul {
+        margin: 0px;
+        padding: 0px;
+        font-size: 0px;
+        list-style-type: none;
+    }
+
+    li {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 20px;
+        text-align: center;
+        border-right: 2px solid;
+
+        a {
+            text-decoration: none;
+        }
+    }
+    
+    .header-icon {
+        text-decoration: none;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .header .header-icon {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .header li {
+        border-right-width: 0px;
+    }
+    
+    .header .header-icon{
+        align-items: center;
+        justify-content: center;
+        height: auto;   
+    }
+
+    .header a {
+        color: inherit !important;
+        text-decoration: none !important;
+    }
+
+    .header li:hover {
+        background-color: inherit !important;
+    }
+
+    .header li:not(:first-child) {
+        display: none;
+    }
+
+    .header.responsive li {
+        display: block;
+        text-align: left;
+    }
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: left;
+    padding: 0px 10px;
+    border-radius: 5px;
+
+    h1 {
+        text-align: center;
+    }
+}
+
+#theme-toggle {
+    position: fixed;
+    display: block;
+    right: 10px;
+    top: 10px;
+} 
+
+/* LIGHT THEME */
+body.light-theme {
+    background-color: #d5c4a1;
+    color: #3c3836;
+
+    .header {
+        background-color: #fbf1c7;
+        border: 2px solid #9d0006;
+        border-left-width: 5px;
+
+        li {
+            border-right-color: #9d0006;
+
+            &:not(.selected-page):hover {
+                background-color: #ebdbb2;
+            }
+        }
+
+        .header-link {
+            color: #3c3836;
+            text-decoration: none;
+        }
+
+        .selected-page {
+            background-color: #cc241d;
+
+            .header-link {
+                color: #f9f5d7;
+            }
+        }
+    }
+
+    hr {
+        border-color: #3c3836;
+    }
+
+    a {
+        color: #076678;
+        text-decoration: none;
+
+        &:visited {
+            color: #8f3f71; 
+        }
+
+        &:hover {
+            color: #fe8019;
+            text-decoration: underline;
+        }
+
+        &:active {
+            color: #fb4934;
+        }
+    }
+
+    .container {
+        background-color: #fbf1c7;
+        border: 2px solid #9d0006;
+        border-left-width: 5px;
+    }
+}
+
+/* DARK THEME */
+body.dark-theme {
+    background-color: #504945;
+    color: #ebdbb2;
+
+    .header {
+        background-color: #665c54;
+        border: 2px solid #458588;
+        border-left-width: 5px;
+
+        li {
+            border-right-color: #458588;
+
+            &:not(.selected-page):hover {
+                background-color: #504945;
+            }
+        }
+
+        .header-link {
+            color: #ebdbb2;
+            text-decoration: none;
+        }
+
+        .selected-page {
+            background-color: #076678;
+        }
+    }
+
+    hr {
+        border-color: #ebdbb2;
+    }
+
+    a {
+        color: #fabd2f;
+        text-decoration: none;
+
+        &:visited {
+            color: #d3869b;
+        }
+
+        &:hover {
+            color: #fe8019;
+            text-decoration: underline;
+        }
+
+        &:active {
+            color: #fb4934;
+        }
+    }
+
+    .container {
+        background-color: #665c54;
+        border: 2px solid #458588;
+        border-left-width: 5px;
+    }
+}
