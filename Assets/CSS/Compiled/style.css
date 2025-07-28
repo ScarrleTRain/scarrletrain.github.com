@@ -41,6 +41,12 @@ body {
   .header li {
     border-right-width: 0px;
   }
+  .header li:hover {
+    background-color: inherit !important;
+  }
+  .header li:not(:first-child) {
+    display: none;
+  }
   .header .header-icon {
     align-items: center;
     justify-content: center;
@@ -49,12 +55,6 @@ body {
   .header a {
     color: inherit !important;
     text-decoration: none !important;
-  }
-  .header li:hover {
-    background-color: inherit !important;
-  }
-  .header li:not(:first-child) {
-    display: none;
   }
   .header.responsive li {
     display: block;
@@ -172,4 +172,6 @@ body.dark-theme .container {
   background-color: #665c54;
   border: 2px solid #458588;
   border-left-width: 5px;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */

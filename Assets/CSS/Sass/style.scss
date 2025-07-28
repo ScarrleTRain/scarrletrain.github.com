@@ -3,6 +3,53 @@
 * https://github.com/morhetz/gruvbox?tab=readme-ov-file 
 */
 
+// Dark background shades
+$dark0-hard:   #1d2021;
+$dark0:        #282828;
+$dark0-soft:   #32302f;
+
+$dark1:        #3c3836;
+$dark2:        #504945;
+$dark3:        #665c54;
+$dark4:        #7c6f64;
+
+// Light foreground shades
+$light0-hard:  #f9f5d7;
+$light0:       #fbf1c7;
+$light0-soft:  #f2e5bc;
+
+$light1:       #ebdbb2;
+$light2:       #d5c4a1;
+$light3:       #bdae93;
+$light4:       #a89984;
+
+// Brights
+$red-bright:     #fb4934;
+$green-bright:   #b8bb26;
+$yellow-bright:  #fabd2f;
+$blue-bright:    #83a598;
+$purple-bright:  #d3869b;
+$aqua-bright:    #8ec07c;
+$orange-bright:  #fe8019;
+
+// Neutrals
+$red-neutral:     #cc241d;
+$green-neutral:   #98971a;
+$yellow-neutral:  #d79921;
+$blue-neutral:    #458588;
+$purple-neutral:  #b16286;
+$aqua-neutral:    #689d6a;
+$orange-neutral:  #d65d0e;
+
+// Fadeds
+$red-faded:     #9d0006;
+$green-faded:   #79740e;
+$yellow-faded:  #b57614;
+$blue-faded:    #076678;
+$purple-faded:  #8f3f71;
+$aqua-faded:    #427b58;
+$orange-faded:  #af3a03;
+
 body {
     font-family: "Fira Mono", monospace;
 }
@@ -44,27 +91,29 @@ body {
 }
 
 @media screen and (max-width: 600px) {
-    .header li {
-        border-right-width: 0px;
-    }
-    
-    .header .header-icon{
-        align-items: center;
-        justify-content: center;
-        height: auto;   
-    }
+    .header {
+        li {
+            border-right-width: 0px;
 
-    .header a {
-        color: inherit !important;
-        text-decoration: none !important;
-    }
+            &:hover {
+                background-color: inherit !important;
+            }
 
-    .header li:hover {
-        background-color: inherit !important;
-    }
+            &:not(:first-child) {
+                display: none;
+            }
+        }
 
-    .header li:not(:first-child) {
-        display: none;
+        .header-icon{
+            align-items: center;
+            justify-content: center;
+            height: auto;   
+        }
+
+        a {
+            color: inherit !important;
+            text-decoration: none !important;
+        }
     }
 
     .header.responsive li {
@@ -94,118 +143,118 @@ body {
 
 /* LIGHT THEME */
 body.light-theme {
-    background-color: #d5c4a1;
-    color: #3c3836;
+    background-color: $light2;
+    color: $dark1;
 
     .header {
-        background-color: #fbf1c7;
-        border: 2px solid #9d0006;
+        background-color: $light0;
+        border: 2px solid $red-faded;
         border-left-width: 5px;
 
         li {
-            border-right-color: #9d0006;
+            border-right-color: $red-faded;
 
             &:not(.selected-page):hover {
-                background-color: #ebdbb2;
+                background-color: $light1;
             }
         }
 
         .header-link {
-            color: #3c3836;
+            color: $dark1;
             text-decoration: none;
         }
 
         .selected-page {
-            background-color: #cc241d;
+            background-color: $red-neutral;
 
             .header-link {
-                color: #f9f5d7;
+                color: $light0-hard;
             }
         }
     }
 
     hr {
-        border-color: #3c3836;
+        border-color: $dark1;
     }
 
     a {
-        color: #076678;
+        color: $blue-faded;
         text-decoration: none;
 
         &:visited {
-            color: #8f3f71; 
+            color: $purple-faded; 
         }
 
         &:hover {
-            color: #fe8019;
+            color: $orange-bright;
             text-decoration: underline;
         }
 
         &:active {
-            color: #fb4934;
+            color: $red-bright;
         }
     }
 
     .container {
-        background-color: #fbf1c7;
-        border: 2px solid #9d0006;
+        background-color: $light0;
+        border: 2px solid $red-faded;
         border-left-width: 5px;
     }
 }
 
 /* DARK THEME */
 body.dark-theme {
-    background-color: #504945;
-    color: #ebdbb2;
+    background-color: $dark2;
+    color: $light1;
 
     .header {
-        background-color: #665c54;
-        border: 2px solid #458588;
+        background-color: $dark3;
+        border: 2px solid $blue-neutral;
         border-left-width: 5px;
 
         li {
-            border-right-color: #458588;
+            border-right-color: $blue-neutral;
 
             &:not(.selected-page):hover {
-                background-color: #504945;
+                background-color: $dark2;
             }
         }
 
         .header-link {
-            color: #ebdbb2;
+            color: $light1;
             text-decoration: none;
         }
 
         .selected-page {
-            background-color: #076678;
+            background-color: $blue-faded;
         }
     }
 
     hr {
-        border-color: #ebdbb2;
+        border-color: $light1;
     }
 
     a {
-        color: #fabd2f;
+        color: $yellow-bright;
         text-decoration: none;
 
         &:visited {
-            color: #d3869b;
+            color: $purple-bright;
         }
 
         &:hover {
-            color: #fe8019;
+            color: $orange-bright;
             text-decoration: underline;
         }
 
         &:active {
-            color: #fb4934;
+            color: $red-bright;
         }
     }
 
     .container {
-        background-color: #665c54;
-        border: 2px solid #458588;
+        background-color: $dark3;
+        border: 2px solid $blue-neutral;
         border-left-width: 5px;
     }
 }
