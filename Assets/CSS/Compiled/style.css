@@ -32,6 +32,50 @@ body {
   text-decoration: none;
 }
 
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  text-align: left;
+  padding: 0px 10px;
+  border-radius: 5px;
+}
+.container h1 {
+  text-align: center;
+}
+.container .section-header {
+  text-align: center;
+}
+.container .lastfm {
+  margin-bottom: 10px;
+}
+.container .lastfm #widget {
+  display: grid;
+  grid-template-columns: min-content auto;
+}
+.container .lastfm #widget #track-info {
+  text-align: justify;
+}
+.container .lastfm *:not(span) {
+  margin: 5px;
+}
+.container .lastfm #attribute {
+  grid-column: 1/span 2;
+  font-size: small;
+  text-align: center;
+}
+.container .mymusic #example-video {
+  width: max-content;
+  aspect-ratio: 16/9;
+  margin: 10px;
+}
+
+#theme-toggle {
+  position: fixed;
+  display: block;
+  right: 10px;
+  top: 10px;
+}
+
 @media screen and (min-width: 600px) {
   .header .header-icon {
     display: none;
@@ -61,24 +105,6 @@ body {
     text-align: left;
   }
 }
-.container {
-  max-width: 600px;
-  margin: 50px auto;
-  text-align: left;
-  padding: 0px 10px;
-  border-radius: 5px;
-}
-.container h1 {
-  text-align: center;
-}
-
-#theme-toggle {
-  position: fixed;
-  display: block;
-  right: 10px;
-  top: 10px;
-}
-
 /* LIGHT THEME */
 body.light-theme {
   background-color: #d5c4a1;
@@ -127,6 +153,9 @@ body.light-theme .container {
   border: 2px solid #9d0006;
   border-left-width: 5px;
 }
+body.light-theme .container .section-header {
+  color: #cc241d;
+}
 
 /* DARK THEME */
 body.dark-theme {
@@ -135,11 +164,11 @@ body.dark-theme {
 }
 body.dark-theme .header {
   background-color: #665c54;
-  border: 2px solid #458588;
+  border: 2px solid #689d6a;
   border-left-width: 5px;
 }
 body.dark-theme .header li {
-  border-right-color: #458588;
+  border-right-color: #689d6a;
 }
 body.dark-theme .header li:not(.selected-page):hover {
   background-color: #504945;
@@ -149,7 +178,7 @@ body.dark-theme .header .header-link {
   text-decoration: none;
 }
 body.dark-theme .header .selected-page {
-  background-color: #076678;
+  background-color: #427b58;
 }
 body.dark-theme hr {
   border-color: #ebdbb2;
@@ -170,8 +199,11 @@ body.dark-theme a:active {
 }
 body.dark-theme .container {
   background-color: #665c54;
-  border: 2px solid #458588;
+  border: 2px solid #689d6a;
   border-left-width: 5px;
+}
+body.dark-theme .container .section-header {
+  color: #8ec07c;
 }
 
 /*# sourceMappingURL=style.css.map */

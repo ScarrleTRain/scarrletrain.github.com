@@ -84,6 +84,61 @@ body {
     }
 }
 
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: left;
+    padding: 0px 10px;
+    border-radius: 5px;
+
+    h1 {
+        text-align: center;
+    }
+
+    .section-header {
+        text-align: center;
+    }
+
+    .lastfm {
+        margin-bottom: 10px;
+        
+        #widget {
+            display: grid;
+            grid-template-columns: min-content auto;
+            
+            #track-info {
+                text-align: justify;
+            }
+        }
+
+        *:not(span) {
+            margin: 5px;
+        }
+
+
+        #attribute {
+            grid-column: 1 / span 2;
+            font-size: small;
+            text-align: center;
+        }
+    }
+
+    .mymusic {
+        #example-video {
+            width: max-content;
+            aspect-ratio: 16/9;
+            margin: 10px;
+        }
+    }
+}
+
+#theme-toggle {
+    position: fixed;
+    display: block;
+    right: 10px;
+    top: 10px;
+} 
+
 @media screen and (min-width: 600px) {
     .header .header-icon {
         display: none;
@@ -121,25 +176,6 @@ body {
         text-align: left;
     }
 }
-
-.container {
-    max-width: 600px;
-    margin: 50px auto;
-    text-align: left;
-    padding: 0px 10px;
-    border-radius: 5px;
-
-    h1 {
-        text-align: center;
-    }
-}
-
-#theme-toggle {
-    position: fixed;
-    display: block;
-    right: 10px;
-    top: 10px;
-} 
 
 /* LIGHT THEME */
 body.light-theme {
@@ -199,6 +235,10 @@ body.light-theme {
         background-color: $light0;
         border: 2px solid $red-faded;
         border-left-width: 5px;
+
+        .section-header {
+            color: $red-neutral;
+        }
     }
 }
 
@@ -209,11 +249,11 @@ body.dark-theme {
 
     .header {
         background-color: $dark3;
-        border: 2px solid $blue-neutral;
+        border: 2px solid $aqua-neutral;
         border-left-width: 5px;
 
         li {
-            border-right-color: $blue-neutral;
+            border-right-color: $aqua-neutral;
 
             &:not(.selected-page):hover {
                 background-color: $dark2;
@@ -226,7 +266,7 @@ body.dark-theme {
         }
 
         .selected-page {
-            background-color: $blue-faded;
+            background-color: $aqua-faded;
         }
     }
 
@@ -254,7 +294,11 @@ body.dark-theme {
 
     .container {
         background-color: $dark3;
-        border: 2px solid $blue-neutral;
+        border: 2px solid $aqua-neutral;
         border-left-width: 5px;
+
+        .section-header {
+            color: $aqua-bright;
+        }
     }
 }
