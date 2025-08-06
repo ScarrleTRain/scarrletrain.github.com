@@ -44,13 +44,17 @@ body {
 }
 .container .section-header {
   text-align: center;
+  margin: 5px;
 }
 .container .lastfm {
   margin-bottom: 10px;
 }
 .container .lastfm #widget {
   display: grid;
-  grid-template-columns: min-content auto;
+  grid-template-columns: 30% auto;
+}
+.container .lastfm #widget #track-art {
+  width: 100%;
 }
 .container .lastfm #widget #track-info {
   text-align: justify;
@@ -63,10 +67,35 @@ body {
   font-size: small;
   text-align: center;
 }
-.container .mymusic #example-video {
-  width: max-content;
+.container .mymusic {
+  display: block;
+  overflow: hidden;
+}
+.container .mymusic .music {
+  display: grid;
+  grid-template-columns: 30% auto;
+}
+.container .mymusic .music #youtube-profile {
+  width: 100%;
+  border-radius: 100%;
+}
+.container .mymusic .music #youtube-info {
+  grid-column: 1/span 2;
+  text-align: center;
+}
+.container .mymusic #video-frame {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.container .mymusic #video-frame #example-video {
+  height: 100%;
   aspect-ratio: 16/9;
-  margin: 10px;
+  padding: 0 5px;
+  grid-column: 0;
+}
+.container .mymusic *:not(span):not(iframe) {
+  margin: 5px;
 }
 
 #theme-toggle {
@@ -204,6 +233,4 @@ body.dark-theme .container {
 }
 body.dark-theme .container .section-header {
   color: #8ec07c;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

@@ -32,8 +32,8 @@ fetch(url)
             playTitle.innerText = "Last Played";
         }
 
-        art.src = track["image"][coverArtSizes.large][t];
+        art.src = track["image"][coverArtSizes.xl][t];
         name.innerText = track["name"];
         artist.innerText = track["artist"][t];
-      album.innerText = track["album"][t];
+        album.innerText = track["album"][t];
     });

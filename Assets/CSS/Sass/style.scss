@@ -97,6 +97,7 @@ body {
 
     .section-header {
         text-align: center;
+        margin: 5px;
     }
 
     .lastfm {
@@ -104,7 +105,11 @@ body {
         
         #widget {
             display: grid;
-            grid-template-columns: min-content auto;
+            grid-template-columns: 30% auto;
+
+            #track-art {
+                width:100%;
+            }
             
             #track-info {
                 text-align: justify;
@@ -124,10 +129,39 @@ body {
     }
 
     .mymusic {
-        #example-video {
-            width: max-content;
-            aspect-ratio: 16/9;
-            margin: 10px;
+        display: block;
+        overflow: hidden;
+
+        .music {
+            display: grid;
+            grid-template-columns: 30% auto;
+            
+            #youtube-profile {
+                width: 100%;
+                border-radius: 100%;
+            }
+
+            #youtube-info {
+                grid-column: 1 / span 2;
+                text-align: center;
+            }
+        }
+
+        #video-frame {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            
+            #example-video {
+                height: 100%;
+                aspect-ratio: 16/9;
+                padding: 0 5px;
+                grid-column: 0;
+            }
+        }
+
+        *:not(span):not(iframe) {
+            margin: 5px;
         }
     }
 }

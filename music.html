@@ -39,15 +39,28 @@
                 <div id="track-info">
                     <h3 id="track-name"></h3>
                     <p>
-                        <span id="track-artist"></span> - <span id="track-album"></span>
+                        <span id="track-artist"></span> - <i><span id="track-album"></span></i>
                     </p>
                 </div>
             </div>
             <p id="attribute">latest played song on last.fm | powered by @biancarosa/lastfm-last-played</p>
         </section>
-        <hr>
+        <hr>  
+        <section class="mymusic">
+            <h3 class="section-header">My music</h3>
+            <div class="music">
+                <img id="youtube-profile" src="">
+                <div id="video-frame">
+                    <iframe id="example-video" src="https://www.youtube.com/embed/QiV5tNcm7Y0?si=iAVSea6987TYRXdP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div id="youtube-info">
+                    <p><span id="youtube-name"></span> -  <a id="youtube-link" href="" target="_blank">Profile Link</a></p>
+                </div>
+            </div>
+        </section>
     </div>
     <script src="Assets/JS/script.js"></script>
     <script src="Assets/JS/lastfm.js"></script>
+    <script src="Assets/JS/ytscrape.js"></script>
 </body>
 </html>
