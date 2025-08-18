@@ -52,6 +52,13 @@ $orange-faded:  #af3a03;
 
 body {
     font-family: "Fira Mono", monospace;
+
+    #random {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+    }
 }
 
 .header {
