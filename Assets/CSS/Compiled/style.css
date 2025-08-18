@@ -5,8 +5,8 @@
 body {
   font-family: "Fira Mono", monospace;
 }
-body #random {
-  position: absolute;
+body #GOL-background {
+  position: fixed;
   left: 0;
   top: 0;
   z-index: -1;

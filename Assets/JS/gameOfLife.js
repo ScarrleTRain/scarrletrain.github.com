@@ -55,7 +55,7 @@ function getCurrentTheme() {
 
 function GameOfLifeInit() {
     const cellSize = 12;
-    const canvas = document.getElementById('random');
+    const canvas = document.getElementById('GOL-background');
     const ctx = canvas.getContext('2d');
 
     let game = new GameOfLife(getCurrentTheme());
