@@ -50,6 +50,39 @@ $purple-faded:  #8f3f71;
 $aqua-faded:    #427b58;
 $orange-faded:  #af3a03;
 
+@font-face {
+    font-family: "TheGoodMonolith";
+    font-style: normal;
+    font-weight: 500;
+    src: local("TheGoodMonolith"),
+        url("../../Fonts/TheGoodMonolith.woff")
+        format("woff");
+}
+
+@font-face {
+  font-display: swap; 
+  font-family: 'Fira Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../../Fonts/FiraMono-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap; 
+  font-family: 'Fira Mono';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../../Fonts/FiraMono-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap; 
+  font-family: 'Fira Mono';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../../Fonts/FiraMono-Bold.woff2') format('woff2');
+}
+
 body {
     font-family: "Fira Mono", monospace;
 
