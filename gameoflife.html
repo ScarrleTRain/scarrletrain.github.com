@@ -1,44 +1,10 @@
 <html> 
 	<head> 
-		<title></title> 
+		<title>Game Of Life</title> 
         <script src="Assets/JS/gameOfLife.js"></script>
-		<script type="text/javascript"> 
- 
-function init() { 
-    // Setup game boards for Conway's Game of Life
-    var random = new GameOfLife("light");
-    const cellSize = 8;
-    const cols = Math.floor(window.innerWidth / cellSize);
-    const rows = Math.floor(window.innerHeight / cellSize);
-    random.init(null, cols, rows);
-
-    // Get canvas and context
-    random.canvas = document.getElementById('random');
-    random.ctx = random.canvas.getContext('2d');
-
-    // Make canvas fill entire viewport
-    random.canvas.width = window.innerWidth;
-    random.canvas.height = window.innerHeight;
-
-    // Run main() at set interval
-    setInterval(function() {
-        run(random, random.ctx, 8, 8); // cell size adjusted for bigger screen
-    }, 500);
-}
- 
-function run(game,ctx,w,h) {
-	game.print(ctx,w,h);
-	game.nextGen()
- 
-	return 0;
-}
- 
-		</script> 
-
-            <link rel="stylesheet" href="Assets/CSS/Compiled/style.css">
-
+        <link rel="stylesheet" href="Assets/CSS/Compiled/style.css">
 	</head> 
-	<body onLoad="init();" id="something" style="margin: 0; display: block; width: 100vw; height: 100vh; background-color: black;"> 
-		<canvas id="random"></canvas>
+	<body onLoad="GameOfLifeInit(4);" style="margin: 0; display: block; width: 100vw; height: 100vh;"> 
+		<canvas id="GOL-background"></canvas>
 	</body> 
 </html>

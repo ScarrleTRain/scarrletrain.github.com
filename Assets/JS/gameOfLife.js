@@ -53,8 +53,7 @@ function getCurrentTheme() {
     return saved ? saved.split('-')[0] : (window.matchMedia("(prefers-color-scheme: dark)").matches ? 'dark' : 'light');
 }
 
-function GameOfLifeInit() {
-    const cellSize = 12;
+function GameOfLifeInit(cellSize = 12) {
     const canvas = document.getElementById('GOL-background');
     const ctx = canvas.getContext('2d');
 
