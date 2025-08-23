@@ -31,6 +31,7 @@
 }
 body {
   font-family: "Fira Mono", monospace;
+  padding: 0;
 }
 body #GOL-background {
   position: fixed;

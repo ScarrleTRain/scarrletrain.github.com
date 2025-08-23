@@ -1,0 +1,72 @@
+@property --crt-position {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 0%;
+}
+
+:root {
+    --bg-color: #121010;
+    --crt-position: 0%;
+}
+
+/* Scanline glow */
+.crt-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(
+    0deg,
+    transparent,
+    rgba(255 255 255 / 0.4) 30px,
+    transparent 60px
+    );
+    background-size: 100% var(--crt-position);
+    background-repeat: no-repeat;
+    filter: blur(10px) hue-rotate(90deg);
+    pointer-events: none;
+    animation: move 16s linear 4s infinite reverse;
+}
+
+/* CRT scanlines + RGB split */
+.crt-container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(
+        rgba(18, 16, 16, 0) 50%,
+        rgba(0, 0, 0, 0.25) 50%
+    ),
+    linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 0.06),
+        rgba(0, 255, 0, 0.02),
+        rgba(0, 0, 255, 0.06)
+    );
+    background-size: 100% 5px, 3px 100%;
+    pointer-events: none;
+}
+
+.crt-container::after {
+    animation: flicker 0.15s infinite;
+}
+
+/* Animations */
+
+@keyframes move {
+    0%,28% { opacity: 0; --crt-position: 100%; }
+    30%,58% { opacity: 0; }
+    60%,100% { opacity: 0; --crt-position: 0%; }
+}
+
+@keyframes flicker {
+    0%   { opacity: 0.13; }
+    15%  { opacity: 0.75; }
+    25%  { opacity: 0.68; }
+    45%  { opacity: 0.69; }
+    50%  { opacity: 0.81; }
+    55%  { opacity: 0.07; }
+    65%  { opacity: 0.57; }
+    85%  { opacity: 0.55; }
+    100% { opacity: 0.09; }
+
+}
