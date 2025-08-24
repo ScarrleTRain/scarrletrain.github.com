@@ -15,7 +15,7 @@ $bg-color: #121010;
 .crt-container {
   position: fixed;
   inset: 0;
-  z-index: 9999;
+  z-index: -1;
   pointer-events: none;
 
   &::before {
@@ -63,13 +63,13 @@ $bg-color: #121010;
 }
 
 @keyframes flicker {
-  0%   { opacity: 0.13; }
-  15%  { opacity: 0.75; }
-  25%  { opacity: 0.68; }
-  45%  { opacity: 0.69; }
-  50%  { opacity: 0.81; }
-  55%  { opacity: 0.07; }
-  65%  { opacity: 0.57; }
-  85%  { opacity: 0.55; }
-  100% { opacity: 0.09; }
+  0%   { opacity: 0.25; }
+  15%  { opacity: 0.65; }
+  25%  { opacity: 0.58; }
+  45%  { opacity: 0.60; }
+  50%  { opacity: 0.70; }
+  55%  { opacity: 0.30; }
+  65%  { opacity: 0.52; }
+  85%  { opacity: 0.50; }
+  100% { opacity: 0.28; }
 }
