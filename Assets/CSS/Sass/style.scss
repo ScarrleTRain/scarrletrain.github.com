@@ -91,7 +91,7 @@ body {
         position: fixed;
         left: 0;
         top: 0;
-        z-index: -1;
+        z-index: -2;
     }
 }
 
@@ -106,6 +106,8 @@ body {
         padding: 0px;
         font-size: 0px;
         list-style-type: none;
+        display: flex;
+        align-items: center;
     }
 
     li {
@@ -122,6 +124,26 @@ body {
     
     .header-icon {
         text-decoration: none;
+    }
+
+    #theme-toggle-container {
+        all: unset;
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+
+        #theme-toggle {
+            all: unset;
+
+            cursor: pointer;
+            background: transparent;
+            border: none;
+
+            img {
+                height: 30px;
+                width: auto;
+            }
+        }
     }
 }
 
@@ -207,13 +229,6 @@ body {
     }
 }
 
-#theme-toggle {
-    position: fixed;
-    display: block;
-    right: 10px;
-    top: 10px;
-} 
-
 @media screen and (min-width: 600px) {
     .header .header-icon {
         display: none;
@@ -222,6 +237,8 @@ body {
 
 @media screen and (max-width: 600px) {
     .header {
+        display: block;
+
         li {
             border-right-width: 0px;
 
@@ -281,6 +298,13 @@ body.light-theme {
             .header-link {
                 color: $light0-hard;
             }
+        }
+
+        #theme-moon {
+            display: block;
+        }
+        #theme-sun {
+            display: none;
         }
     }
 
@@ -342,6 +366,13 @@ body.dark-theme {
 
         .selected-page {
             background-color: $aqua-faded;
+        }
+
+        #theme-moon {
+            display: none;
+        }
+        #theme-sun {
+            display: block;
         }
     }
 
