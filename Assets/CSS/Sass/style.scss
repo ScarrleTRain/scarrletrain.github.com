@@ -139,9 +139,14 @@ body {
             background: transparent;
             border: none;
 
-            img {
-                height: 30px;
-                width: auto;
+            svg {
+                height: 24px;
+                width: 24px;
+
+                path {
+                    fill: currentColor;
+                    
+                }
             }
         }
     }
@@ -299,13 +304,6 @@ body.light-theme {
                 color: $light0-hard;
             }
         }
-
-        #theme-moon {
-            display: block;
-        }
-        #theme-sun {
-            display: none;
-        }
     }
 
     hr {
@@ -366,13 +364,6 @@ body.dark-theme {
 
         .selected-page {
             background-color: $aqua-faded;
-        }
-
-        #theme-moon {
-            display: none;
-        }
-        #theme-sun {
-            display: block;
         }
     }
 

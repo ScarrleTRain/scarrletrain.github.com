@@ -79,9 +79,12 @@ body #GOL-background {
   background: transparent;
   border: none;
 }
-.header #theme-toggle-container #theme-toggle img {
-  height: 30px;
-  width: auto;
+.header #theme-toggle-container #theme-toggle svg {
+  height: 24px;
+  width: 24px;
+}
+.header #theme-toggle-container #theme-toggle svg path {
+  fill: currentColor;
 }
 
 .container {
@@ -208,12 +211,6 @@ body.light-theme .header .selected-page {
 body.light-theme .header .selected-page .header-link {
   color: #f9f5d7;
 }
-body.light-theme .header #theme-moon {
-  display: block;
-}
-body.light-theme .header #theme-sun {
-  display: none;
-}
 body.light-theme hr {
   border-color: #3c3836;
 }
@@ -262,12 +259,6 @@ body.dark-theme .header .header-link {
 }
 body.dark-theme .header .selected-page {
   background-color: #427b58;
-}
-body.dark-theme .header #theme-moon {
-  display: none;
-}
-body.dark-theme .header #theme-sun {
-  display: block;
 }
 body.dark-theme hr {
   border-color: #ebdbb2;
