@@ -101,6 +101,14 @@ body #GOL-background {
   text-align: center;
   margin: 5px;
 }
+.container .stickers {
+  font-size: 0;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.container .stickers * {
+  all: unset;
+}
 .container .lastfm {
   margin-bottom: 10px;
 }

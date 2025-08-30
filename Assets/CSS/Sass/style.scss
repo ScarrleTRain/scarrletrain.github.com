@@ -168,6 +168,16 @@ body {
         margin: 5px;
     }
 
+    .stickers {
+        font-size: 0;
+        margin-bottom: 10px;
+        text-align: center;
+
+        * {
+            all: unset;
+        }
+    }
+
     .lastfm {
         margin-bottom: 10px;
         
