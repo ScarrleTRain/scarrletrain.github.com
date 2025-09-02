@@ -21,8 +21,8 @@ fetch("Assets/musings.musings")
             h3.setAttribute("class",  "section-header");
             h3.innerHTML = "Musing " + line;
 
-            div.appendChild(document.createElement("hr"))
-            div.appendChild(h3)
+            div.appendChild(document.createElement("hr"));
+            div.appendChild(h3);
             div.appendChild(p);
 
             document.getElementById("musing-section").appendChild(div);

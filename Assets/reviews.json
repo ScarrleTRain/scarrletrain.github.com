@@ -1,0 +1,58 @@
+{
+    "Books": {
+        "Ender's Game": {
+            "url": null,
+            "review": null
+        },
+        "Three Body Problem": {
+            "url": null,
+            "review": null
+        },
+        "Mortal Engines Series": {
+            "url": null,
+            "review": null
+        }
+    },
+    "Albums": {
+        "Jazzbois Goes Blunt II": {
+            "url": "jazzboisgoesblunt2.jpeg",
+            "review": "null"
+        },
+        "This Place Will Become Your Tomb": {
+            "url": "tpwbyt.jpeg",
+            "review": null
+        },
+        "Mothership": {
+            "url": "mothership.jpeg",
+            "review": null
+        },
+        "we just need some time together": {
+            "url": "wejustneedsometimetogether.jpeg",
+            "review": null
+        },
+        "FISSION": {
+            "url": "fission.jpeg",
+            "review": null
+        },
+        "A Bud That Never Blooms": {
+            "url": "abudthatneverblooms.jpeg",
+            "review": null
+        },
+        "Punk Tactics": {
+            "url": "punktactics.jpeg",
+            "review": null
+        },
+        "YS Collection Vol. 1": {
+            "url": "yscollection.jpeg",
+            "review": null
+        },
+        "Unsubscribe (Deluxe Edition)": {
+            "url": "unsubscribe.jpeg",
+            "review": null
+        },
+        "Face For The Radio/Voice For A Silent Film (Deluxe)": {
+            "url": "fftr-vfasf.jpeg",
+            "review": null
+        }
+    }
+}
