@@ -29,7 +29,12 @@
   font-weight: 700;
   src: url("../../Fonts/FiraMono-Bold.woff2") format("woff2");
 }
+html {
+  overscroll-behavior: none;
+}
+
 body {
+  overscroll-behavior: none;
   font-family: "Fira Mono", monospace;
   padding: 0;
 }
@@ -159,6 +164,38 @@ body #GOL-background {
 }
 .container .mymusic *:not(span):not(iframe) {
   margin: 5px;
+}
+.container .rw {
+  display: grid;
+  grid-template-columns: 150px 1fr; /* first col for image, second for text */
+  gap: 1rem;
+  align-items: start;
+}
+.container .rw img {
+  width: 150px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+.container .rw p {
+  margin: 0;
+  grid-row: 2;
+}
+.container .rw hr, .container .rw .section-header {
+  grid-column: 1/3;
+  width: 100%;
+}
+.container .rw-left p {
+  grid-column: 2;
+}
+.container .rw-right {
+  grid-template-columns: 1fr 150px !important;
+}
+.container .rw-right img {
+  grid-column: 2;
+}
+.container .rw-right p {
+  grid-column: 1;
 }
 
 @media screen and (min-width: 600px) {

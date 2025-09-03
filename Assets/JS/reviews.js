@@ -11,12 +11,12 @@ fetch('Assets/reviews.json')
         console.log(data[sections[i]])
         for (let j = 0; j < reviews.length; j++) {
             const reviewDiv = document.createElement("div");
-            reviewDiv.setAttribute("class", left === true ? "rw-left" : "rw-right");
+            reviewDiv.setAttribute("class", "rw " + (left === true ? "rw-left" : "rw-right"));
             left = !left;
         
             const h3 = document.createElement("h3");
             h3.setAttribute("class",  "section-header");
-            h3.innerHTML = reviews[j];
+            h3.innerHTML = reviews[j].replace("-", "- <i>") + ("</i>");
             reviewDiv.appendChild(h3);
         
             const reviewObj = data[sections[i]][reviews[j]];
@@ -31,7 +31,7 @@ fetch('Assets/reviews.json')
         
             if (reviewObj["review"] !== null) {
                 const p = document.createElement("p");
-                p.innerHTML = reviewObj["review"];
+                p.innerHTML = reviewObj["review"].replaceAll("\n", "<br><i>") + "</i>";
         
                 reviewDiv.appendChild(p);
             }
