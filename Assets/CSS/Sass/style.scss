@@ -178,8 +178,18 @@ body {
         margin-bottom: 10px;
         text-align: center;
 
-        * {
+        a {
             all: unset;
+            cursor: pointer;
+        }
+
+        p {
+            font-size: 10px;
+        }
+        
+        .fiveonly {
+            max-width: 88px * 5;
+            margin: auto;
         }
     }
 

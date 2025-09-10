@@ -111,8 +111,16 @@ body #GOL-background {
   margin-bottom: 10px;
   text-align: center;
 }
-.container .stickers * {
+.container .stickers a {
   all: unset;
+  cursor: pointer;
+}
+.container .stickers p {
+  font-size: 10px;
+}
+.container .stickers .fiveonly {
+  max-width: 440px;
+  margin: auto;
 }
 .container .lastfm {
   margin-bottom: 10px;

@@ -71,7 +71,7 @@ function GameOfLifeInit(cellSize = 12) {
     resizeBoard();
 
     let lastUpdate = 0;
-    const speed = 250;
+    const speed = 500;
 
     const animate = (timestamp) => {
         if (!lastUpdate) lastUpdate = timestamp;
