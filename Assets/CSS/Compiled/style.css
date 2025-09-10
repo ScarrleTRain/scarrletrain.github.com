@@ -111,10 +111,6 @@ body #GOL-background {
   margin-bottom: 10px;
   text-align: center;
 }
-.container .stickers a {
-  all: unset;
-  cursor: pointer;
-}
 .container .stickers p {
   font-size: 10px;
   margin: 7px;
