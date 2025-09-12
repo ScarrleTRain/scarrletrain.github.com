@@ -151,7 +151,7 @@
     nekoEl.style.position = "fixed";
     nekoEl.style.pointerEvents = "none";
     nekoEl.style.backgroundImage = "url('Assets/Images/oneko.gif')";
-    nekoEl.style.imageRendering = "pixelated";
+    //nekoEl.style.imageRendering = "pixelated";
     nekoEl.style.left = `${nekoPosX - 16}px`;
     nekoEl.style.top = `${nekoPosY - 16}px`;
     nekoEl.style.zIndex = Number.MAX_VALUE;
