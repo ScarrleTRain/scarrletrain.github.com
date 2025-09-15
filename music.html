@@ -17,29 +17,47 @@
 
     <script src="Assets/JS/gameOfLife.js"></script>
 </head>
-<body><!--  onLoad="GameOfLifeInit();"> -->
+<body>
+    <noscript>
+        <style>
+            body { 
+                margin: 0px; 
+                overflow: hidden;
+            }
+
+            .noscript-div {
+                z-index: 997;
+                height: 100vh; 
+                width: 100vw; 
+                background-color: #504945; 
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;  
+            }
+
+            .noscript-div .crt-container {
+                z-index: 999;
+            }
+
+            .noscript-div p {
+                display: flex;
+                text-align: center;
+                margin: 0px;
+                z-index: 997;
+                color: #ebdbb2;
+            }
+        </style>
+        <div class="noscript-div" ="">
+            <div class="crt-container"></div>
+            <p>YOU HAVE NO JAVASCRIPT.<br>THIS PAGE KINDA NEEDS IT...<br>SORRY...</p>
+        </div>
+    </noscript>
     <div class="crt-container"></div>
     <canvas id="GOL-background"></canvas>
-    <nav class="header" id="header">
-        <ul>
-            <li class="header-icon"><a href="javascript:void(0);" onclick="openMenu()">
-                <i class="fa fa-bars" id="menu-icon"></i>
-            </a></li>
-            <li><a href="index.html" class="header-link" data-neko="true">Home</a></li>
-            <li class="selected-page"><a href="music.html" data-neko="true" class="header-link">Music</a></li>
-            <li><a href="musings.html" class="header-link" data-neko="true">Musings</a></li>
-            <li><a href="gameoflife.html" class="header-link">Game Of Life</a></li>
-            <li><a href="https://scarrletrain.atabook.org/" class="header-link" target="_blank">Guestbook</a></li>
-            <li id="theme-toggle-container">
-                <button id="theme-toggle">
-                    <svg viewBox="64 64 512 512" height="25" id="theme-toggle-svg">
-                        <path d="M512 320C512 214 426 128 320 128L320 512C426 512 512 426 512 320zM64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576C178.6 576 64 461.4 64 320z"/>
-                    </svg>
-                </button>
-            </li>
-        </ul> 
-    </nav>
-    <div class="container">
+    <!-- Header will be inserted here from header.js -->
+    <div class="container" id="header-insert">
         <h1>Music</h1>
         <hr>
         <section class="lastfm">
@@ -69,6 +87,7 @@
             </div>
         </section>
     </div>
+    <script src="Assets/JS/header.js"></script>
     <script src="Assets/JS/script.js"></script>
     <script src="Assets/JS/oneko.js"></script>
     <script src="Assets/JS/lastfm.js"></script>

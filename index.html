@@ -12,42 +12,56 @@
     <link rel="icon" type="image/png" sizes="32x32" href="Assets/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="Assets/favicons/favicon-16x16.png">
     <link rel="manifest" href="Assets/favicons/site.webmanifest">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
     <script src="Assets/JS/gameOfLife.js"></script>
 </head>
-<body><!--  onLoad="GameOfLifeInit();"> -->
+<body>
+    <noscript>
+        <style>
+            body { 
+                margin: 0px; 
+                overflow: hidden;
+            }
+
+            .noscript-div {
+                z-index: 997;
+                height: 100vh; 
+                width: 100vw; 
+                background-color: #504945; 
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;  
+            }
+
+            .noscript-div .crt-container {
+                z-index: 999;
+            }
+
+            .noscript-div p {
+                display: flex;
+                text-align: center;
+                margin: 0px;
+                z-index: 997;
+                color: #ebdbb2;
+            }
+        </style>
+        <div class="noscript-div" ="">
+            <div class="crt-container"></div>
+            <p>YOU HAVE NO JAVASCRIPT.<br>THIS PAGE KINDA NEEDS IT...<br>SORRY...</p>
+        </div>
+    </noscript>
     <div class="crt-container"></div>
     <canvas id="GOL-background"></canvas>
-    <nav class="header" id="header">
-        <ul>
-            <li class="header-icon" onclick="openMenu()">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                    <path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
-                </svg>
-            </li>
-            <li class="selected-page"><a href="index.html" class="header-link" data-neko="true">Home</a></li>
-            <li><a href="music.html" class="header-link" data-neko="true">Music</a></li>
-            <li><a href="musings.html" class="header-link" data-neko="true">Musings</a></li>
-            <li><a href="gameoflife.html" class="header-link">Game Of Life</a></li>
-            <li><a href="https://scarrletrain.atabook.org/" class="header-link" target="_blank">Guestbook</a></li>
-            <li id="theme-toggle-container">
-                <button id="theme-toggle">
-                    <svg viewBox="64 64 512 512" height="25" id="theme-toggle-svg">
-                        <path d="M512 320C512 214 426 128 320 128L320 512C426 512 512 426 512 320zM64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576C178.6 576 64 461.4 64 320z"/>
-                    </svg>
-                </button>
-            </li>
-        </ul> 
-    </nav>
-    <div class="container">
+    <!-- Header will be inserted here from header.js -->
+    <div class="container" id="header-insert">
         <h1>About Me</h1>
         <hr>
         <h3 class="section-header">Yes me</h3>
         <p>I am cool<br>I listen to jazz and rock music<br>i em the bEhs man<br>aka: Mr Awesome Jazz Rock :p &lt;3<br>Out of stock and reserved</p>
         <hr>
-        <h3 class="section-header">Socials</h3>
+        <h3 class="section-header">Stuff</h3>
         <p>
             Spotify account: <a href="https://open.spotify.com/user/3136hlwiw47s4th52fqteuczouu4?si=679975e9053f4134" target="_blank">Feixx</a><br>
             Last FM account: <a href="https://www.last.fm/user/ScarrleTRain" target="_blank">ScarrleTRain</a><br>
@@ -77,6 +91,7 @@
             <img src="Assets/Images/scarrletrain-frog.gif">
         </div>
     </div>
+    <script src="Assets/JS/header.js"></script>
     <script src="Assets/JS/script.js"></script>
     <script src="Assets/JS/oneko.js"></script>
 </body>
