@@ -30,7 +30,6 @@ ul.appendChild(headerIcon);
 
 for (key in links) {
     const link = links[key];
-    console.log (key);
     
     const li = document.createElement("li");
     if (currentFileName === link[0]) li.setAttribute("class", "selected-page");
@@ -44,7 +43,6 @@ for (key in links) {
 
     li.appendChild(a);
     ul.appendChild(li);
-    console.log(li);
 }
 
 const themeLi = document.createElement("li");
