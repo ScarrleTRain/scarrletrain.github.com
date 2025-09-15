@@ -70,7 +70,17 @@ body #GOL-background {
   text-decoration: none;
 }
 .header .header-icon {
-  text-decoration: none;
+  padding: 0 20px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+}
+.header .header-icon svg {
+  height: 24px;
+  width: 24px;
+}
+.header .header-icon svg path {
+  fill: currentColor;
 }
 .header #theme-toggle-container {
   all: unset;
@@ -210,29 +220,41 @@ body #GOL-background {
 }
 @media screen and (max-width: 600px) {
   .header {
-    display: block;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .header ul {
+    flex-direction: row;
   }
   .header li {
-    border-right-width: 0px;
+    border-right-width: 0;
   }
-  .header li:hover {
-    background-color: inherit !important;
+  .header li .header-icon a {
+    color: currentColor;
   }
   .header li:not(:first-child) {
     display: none;
   }
-  .header .header-icon {
-    align-items: center;
-    justify-content: center;
-    height: auto;
-  }
-  .header a {
-    color: inherit !important;
-    text-decoration: none !important;
+  .header.responsive ul {
+    flex-direction: column;
+    width: 100%;
   }
   .header.responsive li {
-    display: block;
+    display: block !important;
+    border-right: none;
+    width: 100%;
     text-align: left;
+    margin-left: 40px;
+  }
+  .header.responsive li:not(:first-child) {
+    border-top: 1px solid currentColor;
+  }
+  .header.responsive .header-icon {
+    padding-top: 10px;
+    height: 35px;
+  }
+  .header.responsive #theme-toggle-container {
+    display: none !important;
   }
 }
 /* LIGHT THEME */
