@@ -31,7 +31,7 @@ fetch('Assets/reviews.yaml')
         
             if (reviewObj["review"] !== null) {
                 const p = document.createElement("p");
-                p.innerHTML = reviewObj["review"].replaceAll("\n", "").replaceAll("Highlights", "<br><br><i>Highlights") + "</i>";
+                p.innerHTML = reviewObj["review"].replaceAll("\n", " ").replaceAll("Highlights", "<br><br><i>Highlights") + "</i>";
         
                 reviewDiv.appendChild(p);
             }
