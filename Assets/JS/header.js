@@ -67,5 +67,4 @@ ul.appendChild(themeLi);
 nav.appendChild(ul);
 
 const headerInsert = document.getElementById("header-insert");
-console.log(headerInsert);
 headerInsert.insertAdjacentElement("beforebegin", nav);

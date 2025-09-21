@@ -1,14 +1,14 @@
 let left = true;
 
-fetch('Assets/reviews.json')
-.then(response => response.json())
+fetch('Assets/reviews.yaml')
+.then(response => response.text())
+.then(yamlText => jsyaml.load(yamlText)) 
 .then(data => {
     const sections = Object.keys(data);
     for (let i = 0; i < sections.length; i++) {
         const sectionDiv = document.createElement("div");
         
         const reviews = Object.keys(data[sections[i]]);
-        console.log(data[sections[i]])
         for (let j = 0; j < reviews.length; j++) {
             const reviewDiv = document.createElement("div");
             reviewDiv.setAttribute("class", "rw " + (left === true ? "rw-left" : "rw-right"));
@@ -31,7 +31,7 @@ fetch('Assets/reviews.json')
         
             if (reviewObj["review"] !== null) {
                 const p = document.createElement("p");
-                p.innerHTML = reviewObj["review"].replaceAll("\n", "<br><i>") + "</i>";
+                p.innerHTML = reviewObj["review"].replaceAll("\n", "").replaceAll("Highlights", "<br><br><i>Highlights") + "</i>";
         
                 reviewDiv.appendChild(p);
             }
