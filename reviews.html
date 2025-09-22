@@ -19,35 +19,20 @@
     <script src="Assets/JS/gameOfLife.js"></script>
     <script src="Assets/JS/reviews.js"></script>
 
-    <!-- https://covers.musichoarders.xyz/ -->
+    <!-- Album Covers: https://covers.musichoarders.xyz/ -->
+    <!-- Book Covers: https://bendodson.com/projects/itunes-artwork-finder/ -->
 </head>
-<body onLoad="GameOfLifeInit();">
+<body> <!-- onLoad="GameOfLifeInit();"> -->
     <div class="crt-container"></div>
-    <canvas id="GOL-background"></canvas>
-    <nav class="header" id="header">
-        <ul>
-            <li class="header-icon"><a href="javascript:void(0);" onclick="openMenu()">
-                <i class="fa fa-bars" id="menu-icon"></i>
-            </a></li>
-            <li><a href="index.html" class="header-link">Home</a></li>
-            <li><a href="music.html" class="header-link">Music</a></li>
-            <li><a href="musings.html" class="header-link">Musings</a></li>
-            <li class="selected-page"><a href="reviews.html" class="header-link">Reviews</a></li>
-            <li id="theme-toggle-container">
-                <button id="theme-toggle">
-                    <svg viewBox="64 64 512 512" height="25" id="theme-toggle-svg">
-                        <path d="M512 320C512 214 426 128 320 128L320 512C426 512 512 426 512 320zM64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576C178.6 576 64 461.4 64 320z"/>
-                    </svg>
-                </button>
-            </li>
-        </ul> 
-    </nav>
-    <div class="container">
+    <!-- <canvas id="GOL-background"></canvas> -->
+    <!-- Header will be inserted here from header.js -->
+    <div class="container" id="header-insert">
         <h1>Reviews</h1>
         <p style="text-align: center;"><i>Add filtering system and reviews</i></p>
         <hr>
         <div id="reviews"></div>
     </div>
+    <script src="Assets/JS/header.js"></script>
     <script src="Assets/JS/script.js"></script>
 </body>
 </html>

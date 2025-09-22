@@ -1,14 +1,21 @@
 Books:
   "Ender's Game - Orson Scott Card":
-    url: null
-    review: null
+    url: endersgame.jpg
+    review: |
+      this book just straight up blew my mind the first time I read it. the rest of the series is also good
+      but i didnt find them as satisfying.
   "Three Body Problem - Liu Cixin":
-    url: null
+    url: threebody.jpg
     review: null
   "Mortal Engines Series - Philip Reeve":
-    url: null
+    url: mortalengines.jpg
     review: |
-      this is a really cool series
+      I first read this series as a young preteen and I've read it over again multiple times.
+      I really enjoy the concept of it and it's a great execution. I haven't read them in 
+      a while but I've been a bit preoccupied currently, but I was wanting to reread them sometime soon.
+  "The Divide Series - J. S. Dewes":
+    url: divideseries.jpg
+    review: null
 
 Albums:
   "Jazzbois Goes Blunt II - Jazzbois":
