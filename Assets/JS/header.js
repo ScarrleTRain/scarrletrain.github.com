@@ -33,7 +33,8 @@ for (key in links) {
     const link = links[key];
     
     const li = document.createElement("li");
-    if (currentFileName === link[0] || (key === "Extras" && !linkFiles.includes(currentFileName))) li.setAttribute("class", "selected-page");
+    if (currentFileName === "" && key === "Home") li.setAttribute("class", "selected-page");
+    else if (currentFileName === link[0] || (key === "Extras" && currentFileName !== "" && !linkFiles.includes(currentFileName))) li.setAttribute("class", "selected-page");
     
     const a = document.createElement("a");
     a.innerHTML = key;
