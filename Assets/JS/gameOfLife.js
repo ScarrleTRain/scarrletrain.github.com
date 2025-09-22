@@ -60,12 +60,25 @@ function GameOfLifeInit(cellSize = 12) {
     let game = new GameOfLife(getCurrentTheme());
 
     const resizeBoard = () => {
-        const cols = Math.floor(window.innerWidth / cellSize);
-        const rows = Math.floor(window.innerHeight / cellSize);
+        const dpr = window.devicePixelRatio || 1;
+        const cssWidth = window.innerWidth;
+        const cssHeight = window.innerHeight;
+
+        // number of cells (cols x rows) based on CSS pixels
+        const cols = Math.floor(cssWidth / cellSize);
+        const rows = Math.floor(cssHeight / cellSize);
         game.init(null, cols, rows);
 
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        // Set canvas size in device pixels for crisp rendering on high-DPI screens
+        canvas.width = Math.floor(cssWidth * dpr);
+        canvas.height = Math.floor(cssHeight * dpr);
+
+        // Style the canvas to match CSS layout (so CSS pixels equal window size)
+        canvas.style.width = cssWidth + 'px';
+        canvas.style.height = cssHeight + 'px';
+
+        // Scale drawing operations to account for DPR
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
 
     resizeBoard();
