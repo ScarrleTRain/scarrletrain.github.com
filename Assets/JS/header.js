@@ -10,9 +10,10 @@ const links = {
     "Home": ["index.html", true, false],
     "Music": ["music.html", true, false],
     "Musings": ["musings.html", true, false],
-    "Game Of Life": ["gameoflife.html", false, false],
-    "Guestbook": ["https://scarrletrain.atabook.org/", false, true]
+    "Extras": ["extras.html", true, false]
 };
+const linkFiles = Object.values(links).map(v => v[0]);
+console.log(linkFiles)
 
 const headerIcon = document.createElement("li");
 headerIcon.setAttribute("class", "header-icon");
@@ -32,7 +33,7 @@ for (key in links) {
     const link = links[key];
     
     const li = document.createElement("li");
-    if (currentFileName === link[0]) li.setAttribute("class", "selected-page");
+    if (currentFileName === link[0] || (key === "Extras" && !linkFiles.includes(currentFileName))) li.setAttribute("class", "selected-page");
     
     const a = document.createElement("a");
     a.innerHTML = key;
