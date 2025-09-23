@@ -36,7 +36,7 @@ fetch('Assets/reviews.yaml')
                 reviewDiv.appendChild(p);
             }
 
-            reviewDiv.appendChild(document.createElement("hr"))
+            reviewDiv.appendChild(document.createElement("hr"));
         
             sectionDiv.appendChild(reviewDiv);
         }
