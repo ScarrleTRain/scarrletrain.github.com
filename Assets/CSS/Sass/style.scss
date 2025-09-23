@@ -282,6 +282,7 @@ body {
         p {
             margin: 0;
             grid-row: 2;
+            width: 100%;
         }
 
         hr, .section-header {
@@ -361,6 +362,23 @@ body {
 
             #theme-toggle-container {
                 display: none !important;
+            }
+        }
+    }
+
+    .container {
+        .rw {
+            grid-template-columns: 1fr !important;
+
+            img {
+                justify-self: center;
+                width: 100%;
+                max-width: 150px;
+                grid-column: 1;
+            }
+
+            p { 
+                grid-column: 1;
             }
         }
     }

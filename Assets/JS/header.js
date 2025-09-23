@@ -13,7 +13,6 @@ const links = {
     "Extras": ["extras.html", true, false]
 };
 const linkFiles = Object.values(links).map(v => v[0]);
-console.log(linkFiles)
 
 const headerIcon = document.createElement("li");
 headerIcon.setAttribute("class", "header-icon");
