@@ -22,16 +22,46 @@
     <!-- Album Covers: https://covers.musichoarders.xyz/ -->
     <!-- Book Covers: https://bendodson.com/projects/itunes-artwork-finder/ -->
 </head>
-<body> <!-- onLoad="GameOfLifeInit();"> -->
+<body > <!-- onLoad="GameOfLifeInit();"> -->
     <div class="crt-container"></div>
     <!-- <canvas id="GOL-background"></canvas> -->
     <!-- Header will be inserted here from header.js -->
     <div class="container" id="header-insert">
         <h1>Reviews</h1>
         <hr>
+        <!-- <input id="searchInput" onkeyup="reviewSearch(this.value)"><br> 
+        <hr> -->
         <div id="reviews"></div>
     </div>
     <script src="Assets/JS/header.js"></script>
     <script src="Assets/JS/script.js"></script>
+    <script>
+        function normalizeText(s) {
+            return (s || '')
+                .toLowerCase()
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '')
+                .replace(/[^a-z0-9\s]/g, '')
+                .replace(/\s+/g, ' ')
+                .trim();
+        }
+
+        function reviewSearch(search) {
+            const q = normalizeText(search);
+            const nodes = Array.from(document.querySelectorAll('.rw'));
+            let matches = 0;
+
+            nodes.forEach(node => {
+                const nameAttr = normalizeText(node.getAttribute('name') || '');
+                const ok = q === '' || nameAttr.includes(q);
+                node.style.display = ok ? '' : 'none';
+                if (ok) matches++;
+            });
+
+            if (q !== '' && matches === 0) {
+                nodes.forEach(node => node.style.display = '');
+            }
+        }
+    </script>
 </body>
 </html>

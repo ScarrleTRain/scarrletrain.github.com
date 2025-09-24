@@ -12,6 +12,7 @@ fetch('Assets/reviews.yaml')
         for (let j = 0; j < reviews.length; j++) {
             const reviewDiv = document.createElement("div");
             reviewDiv.setAttribute("class", "rw " + (left === true ? "rw-left" : "rw-right"));
+            reviewDiv.setAttribute("name", reviews[j]);
             left = !left;
         
             const h3 = document.createElement("h3");
@@ -43,6 +44,9 @@ fetch('Assets/reviews.yaml')
 
         document.getElementById("reviews").appendChild(sectionDiv);
     }
+
+    // signal that reviews are injected so the page can run filters
+    window.dispatchEvent(new Event('reviews:loaded'));
 
 })
 .catch(error => {
