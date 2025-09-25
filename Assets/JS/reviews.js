@@ -60,6 +60,8 @@ fetch('Assets/reviews.yaml')
         document.getElementById("reviews").appendChild(sectionDiv);
     }
 
+    filterDrop.insertBefore(filterDropTemp, filterDrop.firstChild)
+
     // signal that reviews are injected so the page can run filters
     window.dispatchEvent(new Event('reviews:loaded'));
 
