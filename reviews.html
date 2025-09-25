@@ -28,9 +28,14 @@
     <!-- Header will be inserted here from header.js -->
     <div class="container" id="header-insert">
         <h1>Reviews</h1>
+        <!-- <hr>
+        <input id="searchInput" onkeyup="reviewSearch(this.value)">
+        <label for="filterDrop">Filter by media</label>
+        <select name="filterDrop" id="filterDrop">
+            <option style="display: none;" value="none"></option>
+            <option onclick="selectNone()">Remove Selection</option>
+        </select><br>  -->
         <hr>
-        <!-- <input id="searchInput" onkeyup="reviewSearch(this.value)"><br> 
-        <hr> -->
         <div id="reviews"></div>
     </div>
     <script src="Assets/JS/header.js"></script>
@@ -61,6 +66,11 @@
             if (q !== '' && matches === 0) {
                 nodes.forEach(node => node.style.display = '');
             }
+        }
+
+        function selectNone() {
+            const filterDrop = document.getElementById("filterDrop");
+            filterDrop.value = "none";
         }
     </script>
 </body>
