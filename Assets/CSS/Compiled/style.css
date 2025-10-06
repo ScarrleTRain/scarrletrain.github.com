@@ -180,6 +180,9 @@ body #GOL-background {
 .container .mymusic *:not(span):not(iframe) {
   margin: 5px;
 }
+.container #searchInput {
+  margin: 0, auto;
+}
 .container .rw {
   display: grid;
   grid-template-columns: 150px 1fr; /* first col for image, second for text */

@@ -266,6 +266,10 @@ body {
         }
     }
 
+    #searchInput {
+        margin: 0, auto;
+    }
+
     .rw {
         display: grid;
         grid-template-columns: 150px 1fr; /* first col for image, second for text */
