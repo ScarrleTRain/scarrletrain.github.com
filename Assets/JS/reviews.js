@@ -12,16 +12,16 @@ fetch('Assets/reviews.yaml')
         sectionDiv.setAttribute("class", "srw");
         sectionDiv.setAttribute("name", sections[i].toLowerCase());
 
-        // const filterDropOption = document.createElement("option");
-        // filterDropOption.setAttribute("value", sections[i].toLowerCase())
-        // filterDropOption.setAttribute("id", sections[i].toLowerCase().replaceAll(" ", ""))
-        // filterDropOption.innerHTML = sections[i];
-        // if (i !== 0) {
-        //     document.getElementById(sections[i-1].toLowerCase().replaceAll(" ", "")).after(filterDropOption);
-        // }
-        // else {
-        //     filterDrop.prepend(filterDropOption);
-        // }
+        const filterDropOption = document.createElement("option");
+        filterDropOption.setAttribute("value", sections[i].toLowerCase())
+        filterDropOption.setAttribute("id", sections[i].toLowerCase().replaceAll(" ", ""))
+        filterDropOption.innerHTML = sections[i];
+        if (i !== 0) {
+            document.getElementById(sections[i-1].toLowerCase().replaceAll(" ", "")).after(filterDropOption);
+        }
+        else {
+            filterDrop.prepend(filterDropOption);
+        }
         
         const reviews = Object.keys(data[sections[i]]);
         for (let j = 0; j < reviews.length; j++) {

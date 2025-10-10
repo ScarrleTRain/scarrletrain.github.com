@@ -31,12 +31,11 @@
         <hr>
         <p>
         <input id="searchInput" onkeyup="reviewSearch(this.value)" placeholder="Search">
-        <!-- <label for="filterDrop">Filter by media</label>
-        <select name="filterDrop" id="filterDrop">
+        <label for="filterDrop">Filter by media</label>
+        <select name="filterDrop" id="filterDrop" onchange="filterSearch()">
             <option style="display: none;" value="none"></option>
             <option onclick="selectNone()">Remove Selection</option>
-        </select><br>  -->
-        <i>Wip - will also add more + filtering.</i></p>
+        </select><br>
         <hr>
         <div id="reviews"></div>
     </div>
@@ -69,6 +68,19 @@
             if (q !== '' && matches === 0) {
                 nodes.forEach(node => node.style.display = '');
             }
+        }
+
+        function filterSearch() {
+            const groups = Array.from(document.getElementsByClassName("srw"));
+            const selected = normalizeText(document.getElementById("filterDrop").value);
+
+            console.log(selected);
+
+            groups.forEach(group => {
+                const nameAttr = normalizeText(group.getAttribute('name') || '');
+                const ok = selected === '' || nameAttr === selected || selected === "remove selection";
+                group.style.display = ok ? '' : 'none';
+            })
         }
 
         function selectNone() {
