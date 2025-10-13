@@ -9,7 +9,7 @@ const ul = document.createElement("ul");
 const links = {
     "Home": ["index.html", true, false],
     "Music": ["music.html", true, false],
-    "Musings": ["musings.html", true, false],
+    "Reviews": ["reviews.html", true, false],
     "Extras": ["extras.html", true, false]
 };
 const linkFiles = Object.values(links).map(v => v[0]);
