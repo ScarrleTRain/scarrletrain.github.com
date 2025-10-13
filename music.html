@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,24 +18,25 @@
 
     <script src="Assets/JS/gameOfLife.js"></script>
 </head>
+
 <body>
     <noscript>
         <style>
-            body { 
-                margin: 0px; 
+            body {
+                margin: 0px;
                 overflow: hidden;
             }
 
             .noscript-div {
                 z-index: 997;
-                height: 100vh; 
-                width: 100vw; 
-                background-color: #504945; 
+                height: 100vh;
+                width: 100vw;
+                background-color: #504945;
 
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                text-align: center;  
+                text-align: center;
             }
 
             .noscript-div .crt-container {
@@ -49,7 +51,7 @@
                 color: #ebdbb2;
             }
         </style>
-        <div class="noscript-div" ="">
+        <div class="noscript-div"="">
             <div class="crt-container"></div>
             <p>YOU HAVE NO JAVASCRIPT.<br>THIS PAGE KINDA NEEDS IT...<br>SORRY...</p>
         </div>
@@ -57,35 +59,88 @@
     <div class="crt-container"></div>
     <canvas id="GOL-background"></canvas>
     <!-- Header will be inserted here from header.js -->
-    <div class="container" id="header-insert">
-        <h1>Music</h1>
-        <hr>
-        <section class="lastfm">
-            <h3 id="play-state" class="section-header">Loading...</h2>
-            <div id="widget">
-                <img id="track-art" src="" alt="Album art"/>
-                <div id="track-info">
-                    <h3 id="track-name"></h3>
-                    <p>
-                        <span id="track-artist"></span>
-                    </p>
+    <span id="header-insert" style="display: none;"></span>
+    <div class="content-container">
+        <div class="sidebar">
+            <?xml version="1.0" encoding="iso-8859-1"?>
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 52" xml:space="preserve">
+                <circle style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:10;" cx="16" cy="16" r="15" />
+                <circle class="cone" style="stroke:#000000;stroke-width:1;stroke-miterlimit:10;" cx="16" cy="16"
+                    r="13" />
+                <circle style="fill:#000000;stroke:#000000;stroke-width:1;stroke-miterlimit:10;" cx="16" cy="16"
+                    r="4" />
+                <circle style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:10;" cx="10" cy="40" r="4" />
+                <circle class="cone" style="stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;" cx="10" cy="40"
+                    r="3" />
+                <circle style="fill:#000000;stroke:#000000;stroke-width:0;stroke-miterlimit:10;" cx="10" cy="40"
+                    r="1" />
+                <circle style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:10;" cx="22" cy="40" r="4" />
+                <circle class="cone" style="stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;" cx="22" cy="40"
+                    r="3" />
+                <circle style="fill:#000000;stroke:#000000;stroke-width:0;stroke-miterlimit:10;" cx="22" cy="40"
+                    r="1" />
+                <circle style="fill:#000000;stroke:#000000;stroke-width:1;stroke-miterlimit:10;" cx="16" cy="48"
+                    r="3" />
+            </svg>
+        </div>
+        <div class="container">
+            <h1>Music</h1>
+            <hr>
+            <section class="lastfm">
+                <h3 id="play-state" class="section-header">Loading...</h2>
+                    <div id="widget">
+                        <img id="track-art" src="" alt="Album art" />
+                        <div id="track-info">
+                            <h3 id="track-name"></h3>
+                            <p>
+                                <span id="track-artist"></span>
+                            </p>
+                        </div>
+                    </div>
+                    <p id="attribute">latest played song on last.fm | powered by @biancarosa/lastfm-last-played</p>
+            </section>
+            <hr>
+            <section class="mymusic">
+                <h3 class="section-header">My music</h3>
+                <div class="music">
+                    <img id="youtube-profile" src="">
+                    <div id="video-frame">
+                        <iframe id="example-video" src="https://www.youtube.com/embed/QiV5tNcm7Y0?si=iAVSea6987TYRXdP"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div id="youtube-info">
+                        <p><span id="youtube-name"></span> - <a id="youtube-link" href="" target="_blank">Profile
+                                Link</a></p>
+                    </div>
                 </div>
-            </div>
-            <p id="attribute">latest played song on last.fm | powered by @biancarosa/lastfm-last-played</p>
-        </section>
-        <hr>  
-        <section class="mymusic">
-            <h3 class="section-header">My music</h3>
-            <div class="music">
-                <img id="youtube-profile" src="">
-                <div id="video-frame">
-                    <iframe id="example-video" src="https://www.youtube.com/embed/QiV5tNcm7Y0?si=iAVSea6987TYRXdP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-                <div id="youtube-info">
-                    <p><span id="youtube-name"></span> -  <a id="youtube-link" href="" target="_blank">Profile Link</a></p>
-                </div>
-            </div>
-        </section>
+            </section>
+        </div>
+        <div class="sidebar sidebar-right">
+            <?xml version="1.0" encoding="iso-8859-1"?>
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 52" xml:space="preserve">
+                <circle style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:10;" cx="16" cy="16" r="15" />
+                <circle class="cone" style="stroke:#000000;stroke-width:1;stroke-miterlimit:10;" cx="16" cy="16"
+                    r="13" />
+                <circle style="fill:#000000;stroke:#000000;stroke-width:1;stroke-miterlimit:10;" cx="16" cy="16"
+                    r="4" />
+                <circle style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:10;" cx="10" cy="40" r="4" />
+                <circle class="cone" style="stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;" cx="10" cy="40"
+                    r="3" />
+                <circle style="fill:#000000;stroke:#000000;stroke-width:0;stroke-miterlimit:10;" cx="10" cy="40"
+                    r="1" />
+                <circle style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:10;" cx="22" cy="40" r="4" />
+                <circle class="cone" style="stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;" cx="22" cy="40"
+                    r="3" />
+                <circle style="fill:#000000;stroke:#000000;stroke-width:0;stroke-miterlimit:10;" cx="22" cy="40"
+                    r="1" />
+                <circle style="fill:#000000;stroke:#000000;stroke-width:1;stroke-miterlimit:10;" cx="16" cy="48"
+                    r="3" />
+            </svg>
+        </div>
     </div>
     <script src="Assets/JS/header.js"></script>
     <script src="Assets/JS/script.js"></script>
@@ -93,4 +148,5 @@
     <script src="Assets/JS/lastfm.js"></script>
     <script src="Assets/JS/ytscrape.js"></script>
 </body>
+
 </html>

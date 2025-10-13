@@ -169,8 +169,47 @@ body {
     }
 }
 
-.container {
+.content-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    //padding: 40px 0px;
+    margin: 50px 0px;
+}
+
+.sidebar {
+    max-width: 200px;
+    width: 100%;
+    text-align: left;
+    padding: 0px 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+
+    display: flex;
+    justify-content: center;
+
+    #Layer_1 {
+        margin: auto 10px;
+        width: 180px;
+        height: 292.5px;
+        display: block;
+
+        
+    }
+}
+
+.sidebar-right {
+    margin-left: 10px;
+    margin-right: 0px;
+}
+
+.content-container > .container {
+    margin: 0 !important;
+}
+
+.container  {
     max-width: 600px;
+    width: 100%;
     margin: 50px auto;
     text-align: left;
     padding: 0px 10px;
@@ -386,6 +425,10 @@ body {
             }
         }
     }
+
+    .sidebar {
+        display: none;
+    }
 }
 
 /* LIGHT THEME */
@@ -500,6 +543,21 @@ body.dark-theme {
 
         &:active {
             color: $red-bright;
+        }
+    }
+
+    .sidebar {
+        background-color: $dark3;
+        border: 2px solid $aqua-neutral;
+        border-left-width: 5px;
+
+        .section-header {
+            color: $aqua-bright;
+        }
+
+        .cone {
+            fill: $dark4;
+            stroke: $aqua-bright;   
         }
     }
 
