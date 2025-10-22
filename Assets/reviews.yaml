@@ -188,6 +188,14 @@ Albums:
 
       Highlights: the entire discography
 
+  # "Get Off The Internet - Eliminate":
+  #   url: null
+  #   review: null
+
+  # "CASIOPEA - Casiopea":
+  #   url: null
+  #   review: "ドリーム・ヒル"
+
 Games:
   "The Legend of Zelda: Breath of the Wild":
     url: botw.jpeg
@@ -227,5 +235,16 @@ Games:
       D&D, Dwarf Fortress, Running with Rifles, Stick Man Adventures, Fireboy and Watergirl, (Other random ORIGINAL friv games),
       krunker.io, ev.io, imrunningoutofgames.io, imsureihavemorethough.io, illaddthemlater.io, The Escapists
 
+# Miscellaneous:
+#   "Mattais Adolfsson":
+#     url: null
+#     review: null
+#   "HOR Berlin":
+#     url: null
+#     review: null
+#   "Futon Song":
+#     url: null
+#     review: null
+  
 
 # mattias adolfsson, games - botw, totk, valorant, assasins creed? list of indie games?

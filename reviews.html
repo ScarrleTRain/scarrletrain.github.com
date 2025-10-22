@@ -29,9 +29,11 @@
     <div class="container" id="header-insert">
         <h1>Reviews</h1>
         <hr>
-        <p>
+        <p></p>
         <input id="searchInput" onkeyup="reviewSearch(this.value)" placeholder="Search">
         <label for="filterDrop">Filter by media</label>
+        
+        <!-- TODO: fix mobile version and iOS -->
         <select name="filterDrop" id="filterDrop" onchange="filterSearch()">
             <option style="display: none;" value="none"></option>
             <option onclick="selectNone()">Remove Selection</option>
