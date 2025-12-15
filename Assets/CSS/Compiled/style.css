@@ -1,6 +1,7 @@
 /*
 * Hex Codes for Gruvbox theme
 * https://github.com/morhetz/gruvbox?tab=readme-ov-file 
+* https://www.w3schools.com/cssref/css_default_values.php << also helpful
 */
 @font-face {
   font-family: "TheGoodMonolith";
@@ -100,6 +101,49 @@ body #GOL-background {
 }
 .header #theme-toggle-container #theme-toggle svg path {
   fill: currentColor;
+}
+
+#music-player {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: #282828;
+  border-radius: 5px;
+  overflow: hidden;
+  top: 100px;
+  left: 100px;
+}
+#music-player .music-player-header {
+  cursor: move;
+  background-color: #83a598;
+  height: 30px;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+#music-player .music-player-content {
+  background-color: rgb(14.5, 14.5, 14.5);
+  height: calc(100% - 30px);
+}
+#music-player .lastfm {
+  margin-bottom: 10px;
+}
+#music-player .lastfm #widget {
+  display: grid;
+  grid-template-columns: 30% auto;
+}
+#music-player .lastfm #widget #track-art {
+  width: 100%;
+}
+#music-player .lastfm #widget #track-info {
+  text-align: justify;
+}
+#music-player .lastfm *:not(span) {
+  margin: 5px;
+}
+#music-player .lastfm #attribute {
+  grid-column: 1/span 2;
+  font-size: small;
+  text-align: center;
 }
 
 .content-container {

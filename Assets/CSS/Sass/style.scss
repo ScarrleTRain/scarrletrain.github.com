@@ -1,6 +1,7 @@
 /*
 * Hex Codes for Gruvbox theme
 * https://github.com/morhetz/gruvbox?tab=readme-ov-file 
+* https://www.w3schools.com/cssref/css_default_values.php << also helpful
 */
 
 // Dark background shades
@@ -165,6 +166,58 @@ body {
                     
                 }
             }
+        }
+    }
+}
+
+#music-player {
+  position: absolute;         // Required for dragging
+  width: 200px;
+  height: 200px;
+  background-color: $dark0;   // Your SCSS variable
+  border-radius: 5px;
+  overflow: hidden;           // Keep content inside rounded corners
+  top: 100px;                 // Initial position
+  left: 100px;
+
+  .music-player-header {
+    cursor: move;             // Shows it can be dragged
+    background-color: $blue-bright;  // Your SCSS variable
+    height: 30px;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+  }
+
+  .music-player-content {
+    background-color: darken($dark0, 10%); // Slightly darker than main background
+    height: calc(100% - 30px);             // Fill remaining space
+  }
+
+    .lastfm {
+        margin-bottom: 10px;
+        
+        #widget {
+            display: grid;
+            grid-template-columns: 30% auto;
+
+            #track-art {
+                width:100%;
+            }
+            
+            #track-info {
+                text-align: justify;
+            }
+        }
+
+        *:not(span) {
+            margin: 5px;
+        }
+
+
+        #attribute {
+            grid-column: 1 / span 2;
+            font-size: small;
+            text-align: center;
         }
     }
 }
