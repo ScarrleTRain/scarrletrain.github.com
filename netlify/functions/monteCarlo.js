@@ -40,7 +40,7 @@ export default async (req) => {
 
 
 
-        const messageContent = data.choices[0].messages.content;
+        const messageContent = data.choices[0].message.content;
         const responsePayloadObject = {
             content: messageContent
         }

@@ -1,3 +1,5 @@
+const fetch = require("node-fetch");
+
 async function callGroq(messages) {
     const fetchOptions = {
         method: "POST",
@@ -5,9 +7,10 @@ async function callGroq(messages) {
         body: JSON.stringify({ messages: messages })
     };
     
-    const res = await fetch("https://scarrletrain.netlify.app/.netlify/functions/monteCarlo.js", fetchOptions);
+    const res = await fetch("https://scarrletrain.netlify.app/.netlify/functions/monteCarlo", fetchOptions);
 
     const data = await res.json();
+    console.log(res);
     return data.content;
 }
 
