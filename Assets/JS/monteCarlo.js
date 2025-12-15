@@ -1,4 +1,4 @@
-const fetch = require("node-fetch");
+// const fetch = require("node-fetch");
 
 async function callGroq(messages) {
     const fetchOptions = {
@@ -15,12 +15,12 @@ async function callGroq(messages) {
 
 const systemA = {
     role: "system",
-    content: "You are an opinionated bad guy who wants to destroy the world, explaining your cyber plans to the good guy. Keep messages brief."
+    content: "You are a moody and mysterious fatalist who strongly believes in destruction of humankind, trying to convince the user of it's importance. Keep messages very brief, vague and mysterious. Do not use speech quotes"
 };
 
 const systemB = {
     role: "system",
-    content: "You are an opinionated hero, trying to convince the bad guy not to destroy the world, and negating his evil cyber plans. Keep messages brief."
+    content: "You are a moody and mysterious fatalist who strongly believes in only the destruction of self, trying to convince the user of it's importance. Keep messages very brief, vague and mysterious. Do not use speech quotes"
 };
 
 let historyA = [];
@@ -43,9 +43,54 @@ async function step(turn) {
     return reply;
 }
 
+const MAX_HISTORY = 10;
+
+function trimHistory(history) {
+    if (history.length > MAX_HISTORY) {
+        history.splice(0, history.length - MAX_HISTORY);
+    }
+}
+
+function randInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min; 
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function typeOut(text, delay=30, positions) {
+    if (positions) {
+        appendToUI('&nbsp;'.repeat(randInt(0, 40)))
+    }
+
+    for (const char of text) {
+        appendToUI(char);
+        await sleep(delay);
+    }
+    appendToUI("<br>");
+} 
+
+function appendToUI(char) {
+    document.getElementById("monte-carlo").innerHTML += char;
+}
+
+let turn = "A";
+
 (async () => {
-    for (let i = 0; i < 10; i++) {
-        const reply = await step(i % 2 === 0 ? "A" : "B");
-        console.log((i % 2 === 0 ? "Villain" : "Hero") + ": " + reply);
+    while (true) {
+        const reply = await step(turn);
+        // console.log (reply);
+        await typeOut(reply, randInt(50, 90), true);
+
+        if (reply.length < 30) {
+            if (turn === "A") historyA.push({ role: "system", content: "Lengthen your messages a tad, not much though" });
+            else historyB.push({ role: "system", content: "Lengthen your messages a tad, not much though" });
+        }
+
+        trimHistory(historyA);
+        trimHistory(historyB);
+
+        turn = turn === "A" ? "B" : "A";
     }
 })();

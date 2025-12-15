@@ -12,18 +12,38 @@
     <link rel="icon" type="image/png" sizes="32x32" href="Assets/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="Assets/favicons/favicon-16x16.png">
     <link rel="manifest" href="Assets/favicons/site.webmanifest">
-    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <script src="Assets/JS/gameOfLife.js"></script>
     <style>
-        .disabled-link {
-            text-decoration: none;
-            color: inherit;
-            opacity: 50%;
+        body.dark-theme {
+            background-color: #111;
+        }
+        .crt-container {z-index: 998;}
+        .header { z-index: 999; position: relative;}
+        #monte-carlo {
+            animation: glow 4s ease-in-out infinite alternate;
+            color: #11FF00 ;
         }
 
-        .disabled-link:hover {
-            text-decoration: line-through;
-            cursor: not-allowed;
+        @keyframes glow {
+            from {
+                text-shadow: 
+                0 0 10px #fff, 
+                0 0 20px #fff, 
+                0 0 30px #00FF66, 
+                0 0 40px #00FF66, 
+                0 0 50px #00FF66;
+            }
+            to {
+                text-shadow: 
+                0 0 20px #fff, 
+                0 0 30px #90F215, 
+                0 0 40px #90F215, 
+                0 0 50px #90F215, 
+                0 0 60px #90F215;
+            }
         }
     </style>
 </head>
@@ -64,27 +84,13 @@
             <p>YOU HAVE NO JAVASCRIPT.<br>THIS PAGE KINDA NEEDS IT...<br>SORRY...</p>
         </div>
     </noscript>
-    <div class="crt-container"></div>
-    <canvas id="GOL-background"></canvas>
     <!-- Header will be inserted here from header.js -->
-    <div class="container" id="header-insert">
-        <h1>Extra stuff</h1>
-        <hr>
-        <h3 class="section-header">Conway's Game of Life</h3>
-        <p>This is a randomized starting Zero-Player game, a cellular automaton. Just watch. <a href="gameoflife.html">Here</a></p>
-        <hr>
-        <h3 class="section-header">Random pulsing thing</h3>
-        <p>I saw it and I thought it was cool so I grabbed it and modified it, and am still thinking of some way to implement it. <a href="pulse.html" target="_blank">Here</a></p>
-        <hr>
-        <h3 class="section-header">Musings</h3>
-        <p>Just some interesting things. Check it out <a href="musings.html" data-neko="true">Here</a><!--<span class="disabled-link">Here</span>--></p>
-        <hr>
-        <h3 class="section-header">Monte Carlo Sim</h3>
-        <p>Just two AIs talking to eachother. Amusing though. <a href="monteCarlo.html" data-neko="true">Here</a></p>
-        <hr>
-        <h3 class="section-header">Guestbook</h3>
-        <p>Please sign ;P <a href="https://scarrletrain.atabook.org/" target="_blank">Here</a></p>
-    </div>
+    <span id="header-insert"></span>
+    
+    <span id="monte-carlo"></span>
+    <div class="crt-container"></div>
+    
+    <script src="Assets/JS/monteCarlo.js"></script>
     <script src="Assets/JS/header.js"></script>
     <script src="Assets/JS/script.js"></script>
     <script src="Assets/JS/oneko.js"></script>
