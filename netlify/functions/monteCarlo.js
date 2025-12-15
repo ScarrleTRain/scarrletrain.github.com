@@ -5,20 +5,18 @@ export async function handler(event) {
         "Access-Control-Allow-Methods": "POST, OPTIONS"
     };
 
-    // CORS preflight
     if (event.httpMethod === "OPTIONS") {
         return {
-        statusCode: 200,
-        headers: corsHeaders
+            statusCode: 200,
+            headers: corsHeaders
         };
     }
 
-    // Enforce POST
     if (event.httpMethod !== "POST") {
         return {
-        statusCode: 405,
-        headers: corsHeaders,
-        body: JSON.stringify({ error: "Method Not Allowed" })
+            statusCode: 405,
+            headers: corsHeaders,
+            body: JSON.stringify({ error: "Method Not Allowed" })
         };
     }
 
@@ -53,33 +51,23 @@ export async function handler(event) {
 
         const groqRes = await fetch(url, fetchOptions);
 
-
-
         const data = await groqRes.json();
+        const content = data.choices[0].message.content;
 
-
-
-        const messageContent = data.choices[0].message.content;
-        const responsePayloadObject = {
-            content: messageContent
-        }
-
-        const responsePayloadJson = JSON.stringify(responsePayloadObject);
-        const responseHeaders = {
-            "Content-Type": "application/json"
+        return {
+            statusCode: 200,
+            headers: {
+                ...corsHeaders,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ content })
         };
-        const responseInitObject = {
-            headers: responseHeaders
-        };
-
-        const response = new Response(responsePayloadJson, responseInitObject);
-
-        return response;
     }
     catch (err) {
-        return new Response(
-            JSON.stringify({ error: err.message }),
-            { status: 500 }
-        );
+        return {
+            statusCode: 500,
+            headers: corsHeaders,
+            body: JSON.stringify({ error: err.message })
+        };
     };
 }
