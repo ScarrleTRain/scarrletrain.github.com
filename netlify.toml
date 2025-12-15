@@ -1,4 +1,0 @@
-[build]
-  base = "netlifyBackend"
-  publish = "."
-  functions = "netlify/functions"
