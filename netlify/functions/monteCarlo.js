@@ -1,10 +1,29 @@
-export default async (req) => {
-    if (req.method !== "POST") {
-        return new Response("Method Not Allowed", {status: 405});
+export async function handler(event) {
+    const corsHeaders = {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Methods": "POST, OPTIONS"
     };
 
+    // CORS preflight
+    if (event.httpMethod === "OPTIONS") {
+        return {
+        statusCode: 200,
+        headers: corsHeaders
+        };
+    }
+
+    // Enforce POST
+    if (event.httpMethod !== "POST") {
+        return {
+        statusCode: 405,
+        headers: corsHeaders,
+        body: JSON.stringify({ error: "Method Not Allowed" })
+        };
+    }
+
     try {
-        const body = await req.json();
+        const body = JSON.parse(event.body);
         const messages = body.messages;
         const temperature = body.temperature ?? 0.8;
 
