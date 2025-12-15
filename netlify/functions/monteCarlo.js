@@ -52,6 +52,17 @@ export async function handler(event) {
         const groqRes = await fetch(url, fetchOptions);
 
         const data = await groqRes.json();
+
+        if (!groqRes.ok) {
+            throw new Error(
+                data?.error?.message || "Groq API request failed"
+            );
+        }
+
+        if (!data.choices || !data.choices[0]?.message?.content) {
+            throw new Error("Groq response missing choices")
+        }
+
         const content = data.choices[0].message.content;
 
         return {
