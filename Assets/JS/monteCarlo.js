@@ -10,7 +10,6 @@ async function callGroq(messages) {
     const res = await fetch("https://scarrletrain.netlify.app/.netlify/functions/monteCarlo", fetchOptions);
 
     const data = await res.json();
-    console.log(res);
     return data.content;
 }
 
@@ -47,6 +46,6 @@ async function step(turn) {
 (async () => {
     for (let i = 0; i < 10; i++) {
         const reply = await step(i % 2 === 0 ? "A" : "B");
-        console.log(reply);
+        console.log((i % 2 === 0 ? "Villain" : "Hero") + ": " + reply);
     }
 })();
