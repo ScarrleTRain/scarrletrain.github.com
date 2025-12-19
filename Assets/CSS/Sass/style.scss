@@ -4,6 +4,8 @@
 * https://www.w3schools.com/cssref/css_default_values.php << also helpful
 */
 
+@use "sass:color";
+
 // Dark background shades
 $dark0-hard:   #1d2021;
 $dark0:        #282828;
@@ -192,7 +194,7 @@ body {
   }
 
   .music-player-content {
-    background-color: darken($dark0, 10%); // Slightly darker than main background
+    background-color: color.scale($dark0, $lightness: -10%);
     height: calc(100% - 30px);             // Fill remaining space
   }
 

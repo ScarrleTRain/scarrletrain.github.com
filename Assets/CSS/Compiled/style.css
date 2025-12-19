@@ -124,7 +124,7 @@ body #GOL-background {
   border-top-right-radius: inherit;
 }
 #music-player .music-player-content {
-  background-color: rgb(14.5, 14.5, 14.5);
+  background-color: #242424;
   height: calc(100% - 30px);
 }
 #music-player .lastfm {
