@@ -33,6 +33,9 @@
 html {
   overscroll-behavior: none;
 }
+html * {
+  box-sizing: border-box;
+}
 
 body {
   overscroll-behavior: none;
@@ -326,14 +329,12 @@ body #GOL-background {
     border-right: none;
     width: 100%;
     text-align: left;
-    margin-left: 40px;
   }
   .header.responsive li:not(:first-child) {
     border-top: 1px solid currentColor;
   }
   .header.responsive .header-icon {
-    padding-top: 10px;
-    height: 35px;
+    padding: 11px 0 13px 20px;
   }
   .header.responsive #theme-toggle-container {
     display: none !important;

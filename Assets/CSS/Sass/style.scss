@@ -86,6 +86,9 @@ $orange-faded:  #af3a03;
 
 html {
     overscroll-behavior: none;
+    * {
+        box-sizing: border-box
+    }
 }
 
 body {
@@ -444,7 +447,6 @@ body {
                 border-right: none;
                 width: 100%;
                 text-align: left;
-                margin-left: 40px;
 
                 &:not(:first-child) {
                     border-top: 1px solid currentColor;
@@ -452,8 +454,7 @@ body {
             }
 
             .header-icon {
-                padding-top: 10px;
-                height: 35px;
+                padding: 11px 0 13px 20px;
             }
 
             #theme-toggle-container {
