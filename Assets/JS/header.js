@@ -8,7 +8,7 @@ const ul = document.createElement("ul");
 
 const links = {
     "Home": ["index.html", true, false],
-    "Music": ["music.html", true, false],
+    "Music": ["#music.html", true, false],
     "Reviews": ["reviews.html", true, false],
     "Extras": ["extras.html", true, false]
 };
@@ -36,6 +36,10 @@ for (key in links) {
     else if (currentFileName === link[0] || (key === "Extras" && currentFileName !== "" && !linkFiles.includes(currentFileName))) li.setAttribute("class", "selected-page");
     
     const a = document.createElement("a");
+    if (key == "Music") {
+        a.style = "text-decoration: line-through;"
+    }
+
     a.innerHTML = key;
     a.setAttribute("href", link[0]);
     a.setAttribute("class", "header-link");
