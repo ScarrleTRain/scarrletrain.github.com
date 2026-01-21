@@ -106,6 +106,15 @@ body {
     }
 }
 
+.clock {
+    border-radius: 5px;
+    position: absolute;
+    z-index: 9;
+    user-select: none;
+    padding: 10px;
+    cursor: move;
+}
+
 .header {
     margin: 10px auto;
     overflow: hidden;
@@ -492,6 +501,12 @@ body.light-theme {
     background-color: $light2;
     color: $dark1;
 
+    .clock {
+        background-color: $light0;
+        border: 2px solid $red-faded;
+        border-left-width: 5px;
+    }
+
     .header {
         background-color: $light0;
         border: 2px solid $red-faded;
@@ -556,6 +571,12 @@ body.light-theme {
 body.dark-theme {
     background-color: $dark2;
     color: $light1;
+
+    .clock {
+        background-color: $dark3;
+        border: 2px solid $aqua-neutral;
+        border-left-width: 5px;
+    }
 
     .header {
         background-color: $dark3;

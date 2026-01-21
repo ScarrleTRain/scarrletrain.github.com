@@ -49,6 +49,17 @@ body #GOL-background {
   z-index: -2;
 }
 
+.clock {
+  border-radius: 5px;
+  position: absolute;
+  z-index: 9;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  padding: 10px;
+  cursor: move;
+}
+
 .header {
   margin: 10px auto;
   overflow: hidden;
@@ -360,6 +371,11 @@ body.light-theme {
   background-color: #d5c4a1;
   color: #3c3836;
 }
+body.light-theme .clock {
+  background-color: #fbf1c7;
+  border: 2px solid #9d0006;
+  border-left-width: 5px;
+}
 body.light-theme .header {
   background-color: #fbf1c7;
   border: 2px solid #9d0006;
@@ -411,6 +427,11 @@ body.light-theme .container .section-header {
 body.dark-theme {
   background-color: #504945;
   color: #ebdbb2;
+}
+body.dark-theme .clock {
+  background-color: #665c54;
+  border: 2px solid #689d6a;
+  border-left-width: 5px;
 }
 body.dark-theme .header {
   background-color: #665c54;
