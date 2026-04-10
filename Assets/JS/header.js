@@ -8,7 +8,7 @@ const ul = document.createElement("ul");
 
 const links = {
     "Home": ["index.html", true, false],
-    "Music": ["#music.html", true, false],
+    "Music": ["https://www.youtube.com/@ScarrleTRain-music", false, true],
     "Reviews": ["reviews.html", true, false],
     "Extras": ["extras.html", true, false]
 };
