@@ -20,19 +20,18 @@ fetch(url)
         const track = json["track"];
 
         query = `${track["artist"][t]} ${track["name"]} topic`
-        console.log(query)
+        // console.log(query)
     })
     .then(async function() {
-        console.log("dsjaio0")
         const res = await fetch(`https://scarrletrain.netlify.app/.netlify/functions/getYTvideo?q=${query}`);
         const ytjson = await res.json();
         return ytjson["items"][0]
     })
     .then(function(video) {
-        console.log(video)
+        // console.log(video)
         videoId = video["id"]["videoId"];
-        console.log(videoId)
-        console.log("dsjaio")
+        // console.log(videoId)
+
 
         const tag = document.createElement('script');
         tag.src = "https://www.youtube.com/iframe_api";
@@ -49,11 +48,6 @@ fetch(url)
                 }
             });
         };
-
-        // Your custom controls call these:
-         // 0 to 100
-        // player.pauseVideo();
-        // player.seekTo(seconds);
     })
     .then(async function() {
         await player.playVideo();
